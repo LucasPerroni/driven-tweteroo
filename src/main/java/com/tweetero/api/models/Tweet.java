@@ -31,5 +31,5 @@ public class Tweet {
 
     @ManyToOne
     @JoinColumn(name = "userId")
-    private User user;
+    private UserTable user;
 }
