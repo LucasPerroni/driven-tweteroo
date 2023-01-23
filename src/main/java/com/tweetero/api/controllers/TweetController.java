@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
@@ -50,8 +50,8 @@ public class TweetController {
     }
 
     @GetMapping
-    public List<Map<Object, Object>> getTweets() {
-        List<Tweet> list = tweetRepository.findAll();
+    public List<Map<Object, Object>> getTweets(@PageableDefault(page = 0, size = 5) Pageable pageable) {
+        Page<Tweet> list = tweetRepository.findAll(pageable);
         List<Map<Object, Object>> formatedList = new ArrayList<>();
 
         list.forEach(i -> {

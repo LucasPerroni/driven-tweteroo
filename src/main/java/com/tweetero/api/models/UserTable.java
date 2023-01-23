@@ -1,11 +1,9 @@
 package com.tweetero.api.models;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.tweetero.api.DTO.UserDTO;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
