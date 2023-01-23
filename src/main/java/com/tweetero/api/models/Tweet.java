@@ -17,9 +17,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Tweet {
 
-    public Tweet(TweetDTO data) {
-        this.text = data.text();
-        this.user = data.user();
+    public Tweet(TweetDTO data, UserTable user) {
+        this.tweet = data.tweet();
+        this.user = user;
     }
 
     @Id
@@ -27,9 +27,8 @@ public class Tweet {
     private Long id;
 
     @Column(nullable = false)
-    private String text;
+    private String tweet;
 
     @ManyToOne
-    @JoinColumn(name = "userId")
     private UserTable user;
 }

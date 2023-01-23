@@ -35,7 +35,7 @@ public class UserTable {
     @Column(nullable = false)
     private String avatar;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Tweet> tweets = new ArrayList<>();
+    @OneToMany
+    private List<Tweet> tweets;
 
 }
